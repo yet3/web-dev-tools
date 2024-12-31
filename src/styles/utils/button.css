@@ -1,0 +1,5 @@
+@utility button-base {
+	@apply border border-bg-content outline-0 p-1;
+  @apply hover:scale-[101%] active:scale-[99%] transition-transform;
+	@apply cursor-pointer;
+}

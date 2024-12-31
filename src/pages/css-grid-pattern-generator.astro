@@ -1,0 +1,12 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import Header from "@modules/Header.astro";
+import { GridPatternGenerator } from "@modules/GridPatternGenerator";
+---
+
+<ToolLayout title="CSS grid pattern generator" description="A tool for generating grid pattern pattern with css">
+  <Header title="CSS grid pattern generator" />
+  <main class="flex flex-col pb-48">
+    <GridPatternGenerator client:load />
+  </main>
+</ToolLayout>

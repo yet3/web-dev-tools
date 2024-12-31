@@ -1,0 +1,91 @@
+---
+import "@styles/index.css";
+import NavPanel from "@modules/NavPanel.astro";
+
+const WEBSITE_TITLE = "WebDevTools";
+const WEBSITE_DESCRIPTION = `Useful tools for web developers`;
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title: _title = WEBSITE_TITLE, description = WEBSITE_DESCRIPTION } =
+  Astro.props;
+
+let title = _title === WEBSITE_TITLE ? _title : `${WEBSITE_TITLE}: ${_title}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
+    <meta property="og:image" content={new URL("/cover.png", Astro.url)} />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content={new URL("/cover.png", Astro.url)} />
+
+    <meta property="og:url" content={Astro.url} />
+    <meta property="twitter:url" content={Astro.url} />
+
+    <meta property="og:type" content="website" />
+  </head>
+  <body class="flex">
+    <NavPanel />
+    <slot />
+  </body>
+</html>
+
+<style>
+  body {
+    color: var(--color-bg-content);
+    background-image: radial-gradient(
+      circle,
+      oklch(55% 0.101 259.58) 0%,
+      var(--color-bg) 100%
+    );
+    background-color: var(--color-bg);
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    --line-color: oklch(95% 0 0 / 5%);
+    background-image: linear-gradient(
+        0deg,
+        transparent 48.08%,
+        var(--line-color) 48.08%,
+        var(--line-color) 51.92%,
+        transparent 51.92%,
+        transparent 100%
+      ),
+      linear-gradient(
+        90deg,
+        transparent 48.08%,
+        var(--line-color) 48.08%,
+        var(--line-color) 51.92%,
+        transparent 51.92%,
+        transparent 100%
+      );
+    background-size: 26px 26px;
+    background-position: 0px 0px;
+    background-color: transparent;
+  }
+</style>

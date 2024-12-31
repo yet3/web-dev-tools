@@ -1,0 +1,79 @@
+.hatching-pattern-generator__preview {
+	--line-size: 4;
+	--spacing: 10;
+	--offset: 0px;
+	--ang: 45deg;
+	--line-color: #ffffff;
+	--bg-color: #0064fc;
+
+	width: 100%;
+	height: 300px;
+	border: 1px solid white;
+
+	--unit: calc((var(--line-size) + var(--spacing)) * 2);
+	--line-stop: calc((var(--line-size) / var(--unit) * 100%) / 2);
+	--1st-start-stop: calc(75% - var(--line-stop));
+	--1st-end-stop: calc(75% + var(--line-stop));
+	--2ed-start-stop: calc(25% - var(--line-stop));
+	--2ed-end-stop: calc(25% + var(--line-stop));
+	background-image: linear-gradient(
+			var(--ang),
+			transparent var(--1st-start-stop),
+			var(--line-color) var(--1st-start-stop),
+			var(--line-color) var(--1st-end-stop),
+			transparent var(--1st-end-stop),
+			transparent 100%
+		),
+		linear-gradient(
+			var(--ang),
+			transparent var(--2ed-start-stop),
+			var(--line-color) var(--2ed-start-stop),
+			var(--line-color) var(--2ed-end-stop),
+			transparent var(--2ed-end-stop),
+			transparent 100%
+		);
+	background-size: calc(var(--unit) * 1px) calc(var(--unit) * 1px);
+	background-position: calc(var(--spacing) * -0.5px + var(--offset))
+		calc(var(--offset) * -1);
+	background-color: var(--bg-color);
+}
+
+.hatching-pattern-generator__preview[data-is-right-leaning="true"] {
+	--ang: -45deg;
+}
+
+.hatching-pattern-generator__preview[data-is-crosshatch="true"] {
+	background-image: linear-gradient(
+			var(--ang),
+			transparent var(--1st-start-stop),
+			var(--line-color) var(--1st-start-stop),
+			var(--line-color) var(--1st-end-stop),
+			transparent var(--1st-end-stop),
+			transparent 100%
+		),
+		linear-gradient(
+			var(--ang),
+			transparent var(--2ed-start-stop),
+			var(--line-color) var(--2ed-start-stop),
+			var(--line-color) var(--2ed-end-stop),
+			transparent var(--2ed-end-stop),
+			transparent 100%
+		),
+		linear-gradient(
+			calc(var(--ang) * -1),
+			transparent var(--1st-start-stop),
+			var(--line-color) var(--1st-start-stop),
+			var(--line-color) var(--1st-end-stop),
+			transparent var(--1st-end-stop),
+			transparent 100%
+		),
+		linear-gradient(
+			calc(var(--ang) * -1),
+			transparent var(--2ed-start-stop),
+			var(--line-color) var(--2ed-start-stop),
+			var(--line-color) var(--2ed-end-stop),
+			transparent var(--2ed-end-stop),
+			transparent 100%
+		);
+}
+

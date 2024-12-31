@@ -1,0 +1,18 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  class?: string;
+
+  title: string;
+  description?: string;
+}
+
+const props = Astro.props;
+---
+
+<BaseLayout title={props.title} description={props.description}>
+  <div class:list={["tool-page-base", props.class]}>
+    <slot />
+  </div>
+</BaseLayout>

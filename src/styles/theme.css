@@ -1,0 +1,7 @@
+@theme {
+	--color-bg: oklch(40.23% 0.101 259.58);
+	--color-bg-content: oklch(95% 0 0);
+
+	--breakpoint-xs: 425px;
+	--height-header: 90px;
+}

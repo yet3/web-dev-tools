@@ -1,0 +1,77 @@
+---
+import ReferenceLine from "@common/ReferenceLine.astro";
+import { GithubIcon } from "@common/Icons/GithubIcon.tsx";
+import { PortfolioIcon } from "@common/Icons/PortfolioIcon.tsx";
+
+interface IOption {
+  id: string;
+  href: string;
+  name: string;
+}
+
+const OPTIONS: IOption[] = [
+  {
+    id: "calc-compute",
+    href: "/css-compute-calc",
+    name: "CSS calc() compute",
+  },
+  {
+    id: "polka-dot-generator",
+    href: "/css-polka-dot-generator",
+    name: "CSS polka dot generator",
+  },
+  {
+    id: "hatching-pattern-generator",
+    href: "/css-hatching-pattern-generator",
+    name: "CSS hatching pattern generator",
+  },
+  {
+    id: "grid-pattern-generator",
+    href: "/css-grid-pattern-generator",
+    name: "CSS grid pattern generator",
+  },
+];
+---
+
+<nav
+  class="w-72 border-r border-bg-content/50 h-screen overflow-hidden not-md:hidden"
+>
+  <div class="min-h-header flex flex-col px-2 justify-center">
+    <h1 class="text-xl font-medium text-center mb-2 mt-auto">WebDevTools</h1>
+    <div class="flex space-x-4 items-center justify-center">
+      <a
+        href="https://github.com/yet3/web-dev-tools"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <GithubIcon />
+      </a>
+      <a
+        href="https://www.maxkasperowicz.com/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <PortfolioIcon />
+      </a>
+    </div>
+    <ReferenceLine opacity={0.75} class="mt-auto" />
+  </div>
+
+  <ul class="px-2 grid content-start overflow-y-auto h-full">
+    {
+      OPTIONS.map((opt) => (
+        <li>
+          <div class="py-2 px-1 grid grid-cols-[auto_1fr] items-center">
+            {Astro.url.pathname.includes(opt.href) && (
+              <div class="size-2 bg-bg-content rounded-full mr-2" />
+            )}
+            <a href={opt.href}>{opt.name}</a>
+          </div>
+          <ReferenceLine opacity={0.2} />
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<script></script>

@@ -1,0 +1,12 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import Header from "@modules/Header.astro";
+import { PolkaDotGenerator } from "@modules/PolkaDotGenerator";
+---
+
+<ToolLayout title="CSS polka dot generator" description="A tool for generating polka dot pattern with css">
+  <Header title="CSS polka dot generator" />
+  <main class="flex flex-col pb-48">
+    <PolkaDotGenerator client:load />
+  </main>
+</ToolLayout>

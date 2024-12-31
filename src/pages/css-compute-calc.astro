@@ -1,0 +1,12 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import { CalcCompute } from "@modules/CalcCompute";
+import Header from "@modules/Header.astro";
+---
+
+<ToolLayout title="CSS calc() compute" description="A tool for computing output of css calc() function">
+  <Header title="CSS calc() compute" />
+  <main class="flex flex-col pb-48">
+    <CalcCompute client:load />
+  </main>
+</ToolLayout>

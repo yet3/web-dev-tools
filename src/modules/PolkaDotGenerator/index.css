@@ -1,0 +1,47 @@
+.polka-dot-generator__preview {
+	--dot-size: 50; /* no unit */
+	--dot-spacing: 15; /* no unit */
+	--offset-x: 0px;
+	--offset-y: 0px;
+	--dot-color: #ffffff;
+	--bg-color: #0064fc;
+
+	width: 100%;
+	height: 300px;
+	border: 1px solid white;
+
+	--dot-unit: calc(var(--dot-size) + var(--dot-spacing));
+	--gradient-stop: calc(
+		var(--hex-per, 70.4%) *
+		(var(--dot-size) / var(--dot-unit))
+	);
+	background-image: radial-gradient(
+		var(--dot-color) var(--gradient-stop),
+		transparent var(--gradient-stop)
+	);
+	--bg-size: calc(var(--dot-unit) * 1px);
+	background-size: var(--bg-size) var(--bg-size);
+	background-position: var(--offset-x) var(--offset-y);
+	background-color: var(--bg-color);
+}
+
+.polka-dot-generator__preview[data-is-hexagonal="true"] {
+	--dot-spacing-final: calc(var(--dot-spacing) + var(--dot-size) * 0.42);
+	--dot-unit: calc(var(--dot-size) + var(--dot-spacing-final));
+	--bg-size: calc(var(--dot-unit) * 1px);
+	--gradient-stop: calc(70.5% * (var(--dot-size) / var(--dot-unit)));
+	--2d-offset-base: calc((var(--dot-unit) / 2) * 1px);
+	--2d-offset-x: calc(var(--2d-offset-base) + var(--offset-x));
+	--2d-offset-y: calc(var(--2d-offset-base) + var(--offset-y));
+
+	background-image: radial-gradient(
+			var(--dot-color) var(--gradient-stop),
+			transparent var(--gradient-stop)
+		),
+		radial-gradient(
+			var(--dot-color) var(--gradient-stop),
+			transparent var(--gradient-stop)
+		);
+	background-position: var(--offset-x) var(--offset-y), var(--2d-offset-x)
+		var(--2d-offset-y);
+}

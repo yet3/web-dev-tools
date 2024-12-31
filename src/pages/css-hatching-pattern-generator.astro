@@ -1,0 +1,12 @@
+---
+import ToolLayout from "@layouts/ToolLayout.astro";
+import Header from "@modules/Header.astro";
+import { HatchingPatternGenerator } from "@modules/HatchingPatternGenerator";
+---
+
+<ToolLayout title="CSS hatching pattern generator" description="A tool for generating hatching pattern pattern with css">
+  <Header title="CSS hatching pattern generator" />
+  <main class="flex flex-col pb-48">
+    <HatchingPatternGenerator client:load />
+  </main>
+</ToolLayout>

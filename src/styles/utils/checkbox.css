@@ -1,0 +1,17 @@
+@layer utility {
+	.checkbox-base {
+		@apply relative border border-bg-content aspect-square size-6 cursor-pointer;
+	}
+
+	.checkbox-base[data-is-checked="true"]::before {
+		@apply content-[""] bg-bg-content absolute;
+		@apply top-1/2 left-1/2 w-full h-[1px];
+		@apply -translate-x-1/2 -translate-y-1/2 rotate-45;
+	}
+
+	.checkbox-base[data-is-checked="true"]::after {
+		@apply content-[""] bg-bg-content absolute;
+		@apply top-1/2 left-1/2 w-full h-[1px];
+		@apply -translate-x-1/2 -translate-y-1/2 -rotate-45;
+	}
+}

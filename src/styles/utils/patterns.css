@@ -1,0 +1,69 @@
+@utility hatching-pattern {
+	--line-size: 0.5; /* no unit */
+	--spacing: 6; /* no unit */
+	--offset: 2px;
+	--ang: -45deg; /* 45deg or -45deg */
+	--line-color: #ffffff;
+	--bg-color: transparent;
+
+	--unit: calc((var(--line-size) + var(--spacing)) * 2);
+	--line-stop: calc((var(--line-size) / var(--unit) * 100%) / 2);
+	--1st-start-stop: calc(75% - var(--line-stop));
+	--1st-end-stop: calc(75% + var(--line-stop));
+	--2ed-start-stop: calc(25% - var(--line-stop));
+	--2ed-end-stop: calc(25% + var(--line-stop));
+	background-image: linear-gradient(
+			var(--ang),
+			transparent var(--1st-start-stop),
+			var(--line-color) var(--1st-start-stop),
+			var(--line-color) var(--1st-end-stop),
+			transparent var(--1st-end-stop),
+			transparent 100%
+		),
+		linear-gradient(
+			var(--ang),
+			transparent var(--2ed-start-stop),
+			var(--line-color) var(--2ed-start-stop),
+			var(--line-color) var(--2ed-end-stop),
+			transparent var(--2ed-end-stop),
+			transparent 100%
+		);
+	background-size: calc(var(--unit) * 1px) calc(var(--unit) * 1px);
+	background-position: calc(var(--spacing) * -0.5px + var(--offset))
+		var(--offset);
+	background-color: var(--bg-color);
+}
+
+@utility grid-pattern {
+	--line-size: 12; /* no unit */
+	--spacing: 24; /* no unit */
+	--offset-x: 0px;
+	--offset-y: 0px;
+	--line-color: #ffffff;
+	--bg-color: #0064fc;
+
+	--unit: calc((var(--line-size) + var(--spacing)) * 2);
+	--line-stop: calc((var(--line-size) / var(--unit) * 100%) / 2);
+	--line-start-stop: calc(50% - var(--line-stop));
+	--line-end-stop: calc(50% + var(--line-stop));
+	background-image: linear-gradient(
+			0deg,
+			transparent var(--line-start-stop),
+			var(--line-color) var(--line-start-stop),
+			var(--line-color) var(--line-end-stop),
+			transparent var(--line-end-stop),
+			transparent 100%
+		),
+		linear-gradient(
+			90deg,
+			transparent var(--line-start-stop),
+			var(--line-color) var(--line-start-stop),
+			var(--line-color) var(--line-end-stop),
+			transparent var(--line-end-stop),
+			transparent 100%
+		);
+
+	background-size: calc(var(--unit) * 1px) calc(var(--unit) * 1px);
+	background-position: var(--offset-x) var(--offset-y);
+	background-color: var(--bg-color);
+}

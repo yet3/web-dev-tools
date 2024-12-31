@@ -1,0 +1,14 @@
+---
+interface Props {
+  opacity?: number;
+  class?: string;
+}
+
+const { opacity = 1, ...props } = Astro.props;
+---
+
+<div class:list={["flex items-center", props.class]}>
+  <div class="w-[1px] h-[7px] bg-bg-content" style={{ opacity }}></div>
+  <div class="w-full h-[1px] bg-bg-content" style={{ opacity }}></div>
+  <div class="w-[1px] h-[7px] bg-bg-content" style={{ opacity }}></div>
+</div>
