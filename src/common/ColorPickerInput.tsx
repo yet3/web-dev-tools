@@ -1,5 +1,5 @@
 import "@thednp/solid-color-picker/style.css";
-import { Match, Switch, createEffect, createSignal, onMount } from "solid-js";
+import { Match, Switch, createSignal, onMount } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
 interface IProps {
@@ -20,10 +20,6 @@ export const ColorPickerInput = (props: IProps) => {
 		} catch (e) {
 			console.log(e);
 		}
-	});
-
-	createEffect(() => {
-		console.log(comp());
 	});
 
 	return (
