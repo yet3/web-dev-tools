@@ -1,4 +1,4 @@
-@layer utility {
+@layer components {
 	.input-range-container {
 		--h: 25px;
 

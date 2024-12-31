@@ -1,11 +1,13 @@
-@utility label {
-	@apply text-bg-content;
-}
+@layer components {
+	.label {
+		@apply text-bg-content;
+	}
 
-@utility label-reference-line {
-	@apply flex flex-col text-bg-content text-center;
-}
+	.label-reference-line {
+		@apply flex flex-col text-bg-content text-center;
+	}
 
-@utility label-reference-line-container {
-	@apply flex flex-col;
+	.label-reference-line-container {
+		@apply flex flex-col;
+	}
 }

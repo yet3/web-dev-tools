@@ -1,4 +1,4 @@
-@layer utility {
+@layer components {
 	.checkbox-base {
 		@apply relative border border-bg-content aspect-square size-6 cursor-pointer;
 	}

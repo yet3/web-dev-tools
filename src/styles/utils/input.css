@@ -1,8 +1,10 @@
-@utility input-container {
-	@apply flex flex-col;
-}
+@layer components {
+	.input-container {
+		@apply flex flex-col;
+	}
 
-@utility input-base {
-	@apply border border-bg-content outline-0 p-1 px-2 w-full;
-	min-height: 43px;
+	.input-base {
+		@apply border border-bg-content outline-0 p-1 px-2 w-full bg-transparent;
+		min-height: 43px;
+	}
 }

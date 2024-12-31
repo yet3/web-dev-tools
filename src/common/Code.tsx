@@ -2,6 +2,7 @@ import type { Plugin } from "prettier";
 import { format } from "prettier/standalone";
 import Prism from "prismjs";
 import { Suspense, createEffect, createResource } from "solid-js";
+import "@styles/prism.css"
 
 interface IProps {
 	class?: string;

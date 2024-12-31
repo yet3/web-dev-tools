@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@astrojs/solid-js": "^5.0.1",
-    "@tailwindcss/vite": "4.0.0-beta.8",
+    "@astrojs/tailwind": "^5.1.4",
     "@thednp/solid-color-picker": "^0.0.13",
     "astro": "^5.1.1",
     "prismjs": "^1.29.0",
     "solid-js": "^1.9.3",
-    "tailwindcss": "4.0.0-beta.8"
+    "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
     "@types/prismjs": "^1.26.5",
