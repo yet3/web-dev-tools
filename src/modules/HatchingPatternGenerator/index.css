@@ -34,7 +34,7 @@
 		);
 	background-size: calc(var(--unit) * 1px) calc(var(--unit) * 1px);
 	background-position: calc(var(--spacing) * -0.5px + var(--offset))
-		calc(var(--offset) * -1);
+		calc(var(--offset));
 	background-color: var(--bg-color);
 }
 
