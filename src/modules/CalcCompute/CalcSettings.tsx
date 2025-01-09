@@ -14,7 +14,7 @@ interface IProps {
 
 export const CalcSettings = (props: IProps) => {
 	return (
-		<div class="flex not-xs:flex-col xs:flex-wrap gap-x-10 gap-y-6 mb-12 justify-center items-center">
+		<div class="flex max-xs:flex-col xs:flex-wrap gap-x-10 gap-y-6 mb-12 justify-center items-center">
 			<Input
 				label="1rem = ?px"
 				type="number"

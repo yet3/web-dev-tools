@@ -47,7 +47,7 @@ export const CalcCompute = () => {
 
 			<div class="grid lg:grid-cols-[1fr_1fr] grid-cols-1 gap-8">
 				<div class="grid grid-cols-1 xs:grid-cols-[min-content_auto_min-content] gap-x-1 gap-y-4 w-full content-start">
-					<span class="not-xs:hidden">calc(</span>
+					<span class="max-xs:hidden">calc(</span>
 					<textarea
 						value={expression()}
 						onInput={(e) => setExpression(e.target.value)}
@@ -55,7 +55,7 @@ export const CalcCompute = () => {
 						placeholder="example: 4px * 2.5 + (1mm - 4px)"
 						rows={5}
 					/>
-					<span class="not-xs:hidden self-end">)</span>
+					<span class="max-xs:hidden self-end">)</span>
 
 					<Button
             disabled={expression().length === 0}
