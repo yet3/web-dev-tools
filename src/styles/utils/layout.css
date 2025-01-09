@@ -1,5 +1,5 @@
 @layer components {
 	.tool-page-base {
-		@apply flex flex-col w-full h-screen xs:px-6 px-3 overflow-auto;
+		@apply flex flex-col w-full h-screen px-2 md:px-6 md:overflow-auto;
 	}
 }
