@@ -18,7 +18,7 @@ export const generateGridPatternCode = (opts: IOpts): string => {
 };
 
 const noVars = (opts: IOpts): string => {
-	const unit = (opts.lineSize + opts.cellSize) * 2;
+	const unit = opts.lineSize + opts.cellSize;
 	const lineStop = ((opts.lineSize / unit) * 100) / 2;
 	const lineStartStop = 50 - lineStop;
 	const lineEndStop = 50 + lineStop;
