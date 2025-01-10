@@ -2,7 +2,7 @@
 
 interface IOpts {
 	lineSize: number;
-	spacing: number;
+	cellSize: number;
 	offsetX: number;
 	offsetY: number;
 
@@ -18,7 +18,7 @@ export const generateGridPatternCode = (opts: IOpts): string => {
 };
 
 const noVars = (opts: IOpts): string => {
-	const unit = (opts.lineSize + opts.spacing) * 2;
+	const unit = (opts.lineSize + opts.cellSize) * 2;
 	const lineStop = ((opts.lineSize / unit) * 100) / 2;
 	const lineStartStop = 50 - lineStop;
 	const lineEndStop = 50 + lineStop;
@@ -52,13 +52,13 @@ const withVars = (opts: IOpts): string => {
 	return `
   .grid-pattern {
     --line-size: ${opts.lineSize}; /* no unit */
-    --spacing: ${opts.spacing}; /* no unit */
+    --cell-size: ${opts.cellSize}; /* no unit */
     --offset-x: ${opts.offsetX * -1}px;
     --offset-y: ${opts.offsetX * -1}px;
     --line-color: ${opts.lineColor};
     --bg-color: ${opts.bgColor};
 
-    --unit: calc((var(--line-size) + var(--spacing)) * 2);
+    --unit: calc(var(--line-size) + var(--cell-size));
     --line-stop: calc((var(--line-size) / var(--unit) * 100%) / 2);
     --line-start-stop: calc(50% - var(--line-stop));
     --line-end-stop: calc(50% + var(--line-stop));

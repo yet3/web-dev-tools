@@ -18,7 +18,7 @@ export const GridPatternGenerator = () => {
 	const [lineSize, setLineSize] = createSignal(
 		GRID_PATTERN_CONSTS.DEFAULT_LINE_SIZE,
 	);
-	const [spacing, setSpacing] = createSignal(
+	const [cellSize, setCellSize] = createSignal(
 		GRID_PATTERN_CONSTS.DEFAULT_SPACING,
 	);
 	const [offsetX, setOffsetX] = createSignal(0);
@@ -34,7 +34,7 @@ export const GridPatternGenerator = () => {
 	const code = createMemo(() => {
 		return generateGridPatternCode({
 			lineSize: lineSize(),
-			spacing: spacing(),
+			cellSize: cellSize(),
 			offsetX: offsetX(),
 			offsetY: offsetY(),
 			withVars: withVars(),
@@ -59,8 +59,8 @@ export const GridPatternGenerator = () => {
 					{...{
 						lineSize,
 						setLineSize,
-						spacing,
-						setSpacing,
+						cellSize,
+						setCellSize,
 						offsetX,
 						setOffsetX,
 						offsetY,
@@ -77,7 +77,7 @@ export const GridPatternGenerator = () => {
 						"--offset-x": `${-offsetX()}px`,
 						"--offset-y": `${-offsetY()}px`,
 						"--line-size": lineSize(),
-						"--spacing": spacing(),
+						"--cell-size": cellSize(),
 						"--line-color": lineColor(),
 						"--bg-color": bgColor(),
 					}}

@@ -1,6 +1,6 @@
 .grid-pattern-generator__preview {
-	--line-size: 1;
-	--spacing: 6;
+	--line-size: 10;
+	--cell-size: 24;
 	--offset-x: 2px;
 	--offset-y: 2px;
 	--line-color: #ffffff;
@@ -10,7 +10,7 @@
 	height: 300px;
 	border: 1px solid white;
 
-	--unit: calc((var(--line-size) + var(--spacing)) * 2);
+	--unit: calc((var(--line-size)) + var(--cell-size));
 	--line-stop: calc((var(--line-size) / var(--unit) * 100%) / 2);
 
 	--line-start-stop: calc(50% - var(--line-stop));
