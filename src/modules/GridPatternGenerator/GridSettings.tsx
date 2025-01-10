@@ -56,7 +56,7 @@ export const GridSettings = (props: IProps) => {
 			<RangeWithInput
 				label="Offset y"
 				inputTopCalss="w-32"
-				min={0}
+				min={1}
 				max={maxOffset()}
 				value={props.offsetY()}
 				onChange={props.setOffsetY}
