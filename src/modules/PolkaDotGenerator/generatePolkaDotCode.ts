@@ -64,7 +64,7 @@ const withVars = (opts: IOpts): string => {
 		bgPosCode =
 			"var(--offset-x) var(--offset-y), calc(var(--2d-offset-base) + var(--offset-x)) calc(var(--2d-offset-base) + var(--offset-y))";
 		bgImageCode =
-			"radial-gradient(var(--dot-color) var(--gradient-stop),transparent var(--gradient-stop)),radial-gradient(red var(--gradient-stop), transparent var(--gradient-stop))";
+			"radial-gradient(var(--dot-color) var(--gradient-stop),transparent var(--gradient-stop)),radial-gradient(var(--dot-color) var(--gradient-stop), transparent var(--gradient-stop))";
 	}
 
 	return `
