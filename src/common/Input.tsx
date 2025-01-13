@@ -1,4 +1,5 @@
 import type { JSX } from "solid-js";
+import { Button } from "./Button";
 import { WithLabel } from "./WithLabel";
 
 interface IProps {
@@ -86,21 +87,19 @@ export const Input = (props: IProps) => {
 					/>
 					{props.type === "number" && (
 						<div class="border border-l-0 border-bg-content w-6 text-sm">
-							<button
+							<Button
 								onClick={() => handleIncDec(1)}
-								class="grid place-items-center w-full cursor-pointer"
-								type="button"
+								class="p-0 border-none grid place-items-center w-full"
 							>
 								+
-							</button>
+							</Button>
 							<div class="w-full h-[1px] bg-bg-content" />
-							<button
+							<Button
 								onClick={() => handleIncDec(-1)}
-								class="grid place-items-center w-full cursor-pointer"
-								type="button"
+								class="p-0 border-none grid place-items-center w-full"
 							>
 								-
-							</button>
+							</Button>
 						</div>
 					)}
 				</div>
