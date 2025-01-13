@@ -1,7 +1,7 @@
 @layer components {
 	.button-base {
-		@apply border border-bg-content outline-0 p-1;
-		@apply hover:scale-[101%] active:scale-[99%] transition-transform;
+		@apply border border-bg-content outline-0 py-1 px-2;
+    @apply hover:bg-white hover:text-bg active:bg-transparent active:text-white;
 		@apply cursor-pointer;
 	}
 }
