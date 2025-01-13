@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/prismjs": "^1.26.5",
+    "fluid-tailwind": "^1.0.4",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "typescript": "^5.7.2"

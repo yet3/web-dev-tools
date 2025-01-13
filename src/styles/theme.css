@@ -1,6 +1,4 @@
 :root {
 	--color-bg: oklch(40.23% 0.101 259.58);
 	--color-bg-content: oklch(95% 0 0);
-
-  --height-header: 90px;
 }
